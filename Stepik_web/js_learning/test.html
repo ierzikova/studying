@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<title>Страница с примером кода JavaScript</title>
+    <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css>
+    <script src="./myscript.js"></script>
+    <style>
+        body {
+            margin-top: 70px;
+            background-color: #333;
+            color: white
+        }
+
+        .h4-mb-0 {
+            margin-bottom: unset;
+        }
+
+        .card-block {
+            padding: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="display-3 text-center">Конвертер величин</h1>
+            <form>
+                <div class="form-group">
+                    <input type="number" id="input" placeholder="Введите километры"
+                    class="form-control form-control-lg">
+                </div>
+            </form>
+            <div id="output">
+                <div class="card alert-warning mb-2">
+                    <div class="card-block">
+                        <h4 class="h4-mb-0">Метры:</h4>
+                        <div id="metresOutput">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card alert-primary mb-2">
+                    <div class="card-block">
+                        <h4 class="h4-mb-0">Сантиметры:</h4>
+                        <div id="smOutput">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card alert-success mb-2 ">
+                    <div class="card-block">
+                        <h4  class="h4-mb-0">Миллиметры:
+                            <div id="mmOutput"></div>
+                        </h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //document.getElementById('output').style.visibility = 'hidden'
+    document.getElementById('input').addEventListener('input', function(element) {
+    //    document.getElementById('output').style.visibility = 'visible'
+        let km = element.target.value;
+        document.getElementById('metresOutput').innerHTML=km*1000;
+        document.getElementById('smOutput').innerHTML=km*1000*100;
+        document.getElementById('mmOutput').innerHTML=km*1000*100*10;
+    })
+</script>
+</body>
+</html>
+

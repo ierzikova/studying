@@ -1,0 +1,12 @@
+4
+ArithmeticError
+ZeroDivisionError : ArithmeticError
+OSError
+FileNotFoundError : OSError
+4
+ZeroDivisionError
+OSError
+ArithmeticError
+FileNotFoundError
+
+# Sample Output: FileNotFoundError
