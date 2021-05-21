@@ -11,13 +11,14 @@ numbersapi.com
 в каком следуют числа во входном файле.
 """
 import requests
+import os
 
 API_URL = f'http://numbersapi.com/'
 
 
 def get_fact(number='random', api_url=API_URL):
     '''
-    Посылает API запрос с заданным number
+    Отправляет API запрос с заданным number
     Возвращаает словарь с информацией о number
     '''
     params = {
@@ -40,8 +41,8 @@ def is_interesting(number):
     return 'Interesting' if info['found'] else 'Boring'
 
 
-# get testing data
-with open('3-3-5-testcase.txt') as file:
+test_path = (os.path.join(os.path.dirname(__file__), '3-3-5-testcase.txt'))
+with open(test_path) as file:
     data = file.readlines()
     for line in data:
         number = line.strip()

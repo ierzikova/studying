@@ -148,7 +148,9 @@ for line in sys.stdin:
 # import re
 
 for line in sys.stdin:
-    template = r'(\w){2}+'
+    template = r'(\w)\1+'
     new = r'\1'
     new_line = re.sub(template, new, line)
     print(new_line.strip())
+
+
